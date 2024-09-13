@@ -1,0 +1,49 @@
+<div class="container">
+    <h1>Admin Panel</h1>
+    <button (click)="logout()" class="logout">Logout</button>
+
+    <div>
+        <h3>Manage Facility</h3>
+        <form (ngSubmit)="addFacility()" #facilityForm="ngForm">
+            <label for="facilityName">Facility Name:</label>
+            <input class="facility-input" id="facilityName" name="facilityName" [(ngModel)]="newFacilityName" required>
+            
+            <button type="submit">Add Facility</button>
+        </form>
+        
+        <h4>Existing Facilities:</h4>
+        <ul>
+            <li *ngFor="let facility of facilities">
+                {{ facility.name }}
+                <button (click)="removeFacility(facility)" class="remove">Remove</button>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>Set Availability</h3>
+        <form (ngSubmit)="setAvailability()" #availabilityForm="ngForm">
+            <label for="facility">Select Facility:</label>
+            <select id="facility" name="facility" [(ngModel)]="selectedFacility" required>
+                <option *ngFor="let facility of facilities" [ngValue]="facility">
+                    {{ facility.name }}
+                </option>
+            </select>
+            
+            <label for="startTime">Start Time:</label>
+            <input id="startTime" name="startTime" type="datetime-local" [(ngModel)]="startTime" required>
+
+            <label for="endTime">End Time:</label>
+            <input id="endTime" name="endTime" type="datetime-local" [(ngModel)]="endTime" required>
+
+            <button type="submit">Set Availability</button>
+        </form>
+        
+        <h4>Facility Availability:</h4>
+        <ul>
+            <li *ngFor="let availability of availabilities">
+                {{ availability.facility.name }}: {{ availability.startTime }} - {{ availability.endTime }}
+            </li>
+        </ul>
+    </div>
+</div>
