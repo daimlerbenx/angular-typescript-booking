@@ -2,20 +2,6 @@
 
 This is a **Facility Booking System** developed using **Angular** and **TypeScript**. The application allows users to view available facilities and their respective time slots, and provides admin functionalities to manage facilities and set their availability, with a login authentication system for both users and admins.
 
-## Table of Contents
-
-- [Features](#features)
-- [Technologies](#technologies)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Authentication](#authentication)
-- [Folder Structure](#folder-structure)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
-
----
-
 ## Features
 
 ### User Panel:
